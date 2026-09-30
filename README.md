@@ -1,6 +1,6 @@
 # Unfold: free mental health tests
 
-A static website with 32 tests in 10 categories: mental health screening, personality, IQ and reasoning, and reflective surveys.
+A static website with 33 tests in 11 categories: mental health screening, personality, IQ and reasoning, reflective surveys, and a just-for-fun astrology test.
 No backend and no database. Everything runs in the browser, and results are saved in the visitor's own browser (localStorage).
 
 ## Deploy
@@ -13,14 +13,14 @@ Upload the contents of this folder to any static host:
 
 ## Pages
 
-- Home: all 10 categories.
+- Home: all 11 categories.
 - One page per category, e.g. `mood-tests.html`, `personality-tests.html`, `iq-and-brain-tests.html`.
 - One page per test, e.g. `depression-test.html`, `big-five` is `personality-test.html`, `iq-test.html`.
 - `results.html`, `help.html`, `about.html`, `404.html`.
 
 ### Categories
 
-General wellbeing (4) · Mood (3) · Anxiety and fear (4) · Attention and perception (2) · Habits and body (4) · Self and relationships (4) · Personality (3) · IQ and brain tests (3) · Young people (2) · Surveys (3).
+General wellbeing (4) · Mood (3) · Anxiety and fear (4) · Attention and perception (2) · Habits and body (4) · Self and relationships (4) · Personality (3) · IQ and brain tests (3) · Young people (2) · Surveys (3) · Just for fun (1).
 
 ## Before you launch
 
@@ -40,6 +40,7 @@ General wellbeing (4) · Mood (3) · Anxiety and fear (4) · Attention and perce
 | Postpartum | EPDS | Free with author citation |
 | Parent test | PSC-17 | Free to use (MGH) |
 | All others, surveys, IQ | Written for this site | Not validated |
+| Astrology | Traditional zodiac associations | Entertainment only, not a psychological instrument |
 
 Tests marked "written for this site" are self-reflection checks, not validated instruments. If you want validated tools for those areas (for example ASRS for ADHD, SPIN for social anxiety, PGSI for gambling), check each licence first, since several require permission.
 

@@ -17,6 +17,70 @@
   };
   function opts(labels) { return labels.map(function (l, i) { return [l, i]; }); }
 
+  /* ---------- Zodiac data for the astrology test (entertainment only) ---------- */
+  var ZODIAC = [
+    { name: "Aries", sym: "♈", dates: "21 Mar – 19 Apr", element: "Fire", planet: "Mars", traits: "bold, energetic, direct and quick to act",
+      strength: "Aries brings courage and initiative. When something needs to get moving, Aries is usually the one who starts it.",
+      growth: "Patience isn’t always the strong suit here. Slowing down before reacting can save some backtracking.",
+      matches: "Leo, Sagittarius and Gemini." },
+    { name: "Taurus", sym: "♉", dates: "20 Apr – 20 May", element: "Earth", planet: "Venus", traits: "steady, loyal and grounded, with a love of comfort",
+      strength: "Taurus brings reliability and follow-through. Once committed, Taurus rarely gives up.",
+      growth: "Routine can turn into rigidity. Trying something unfamiliar now and then keeps things fresh.",
+      matches: "Virgo, Capricorn and Cancer." },
+    { name: "Gemini", sym: "♊", dates: "21 May – 20 Jun", element: "Air", planet: "Mercury", traits: "curious, quick-witted and endlessly chatty",
+      strength: "Gemini brings adaptability and sharp communication, and can hold a conversation about almost anything.",
+      growth: "Following one thing through to the end can be harder than starting it. Fewer things, more finished.",
+      matches: "Libra, Aquarius and Aries." },
+    { name: "Cancer", sym: "♋", dates: "21 Jun – 22 Jul", element: "Water", planet: "the Moon", traits: "nurturing, intuitive and deeply loyal",
+      strength: "Cancer brings warmth and emotional intelligence, and makes the people around them feel looked after.",
+      growth: "Taking things personally is a common trap. Not every reaction from someone else is about you.",
+      matches: "Scorpio, Pisces and Taurus." },
+    { name: "Leo", sym: "♌", dates: "23 Jul – 22 Aug", element: "Fire", planet: "the Sun", traits: "confident, generous and naturally warm",
+      strength: "Leo brings energy and leadership, and a genuine wish to see the people around them do well.",
+      growth: "Sharing attention doesn’t always come easily. Making room for someone else to shine builds trust.",
+      matches: "Aries, Sagittarius and Libra." },
+    { name: "Virgo", sym: "♍", dates: "23 Aug – 22 Sep", element: "Earth", planet: "Mercury", traits: "analytical, practical and detail-focused",
+      strength: "Virgo brings precision and dependability, spotting what others miss and quietly fixing it.",
+      growth: "The inner critic can be loud. Good enough is sometimes exactly that: good enough.",
+      matches: "Taurus, Capricorn and Cancer." },
+    { name: "Libra", sym: "♎", dates: "23 Sep – 22 Oct", element: "Air", planet: "Venus", traits: "diplomatic, fair-minded and socially graceful",
+      strength: "Libra brings balance and charm, and a knack for seeing more than one side of an argument.",
+      growth: "Weighing every option can turn into indecision. A good-enough choice made now often beats the perfect one made late.",
+      matches: "Gemini, Aquarius and Leo." },
+    { name: "Scorpio", sym: "♏", dates: "23 Oct – 21 Nov", element: "Water", planet: "Pluto and Mars", traits: "intense, passionate and fiercely private",
+      strength: "Scorpio brings focus and depth, and doesn’t do anything by halves.",
+      growth: "Trust can take a long time to give. Letting people in a little earlier tends to pay off.",
+      matches: "Cancer, Pisces and Virgo." },
+    { name: "Sagittarius", sym: "♐", dates: "22 Nov – 21 Dec", element: "Fire", planet: "Jupiter", traits: "adventurous, optimistic and refreshingly honest",
+      strength: "Sagittarius brings enthusiasm and a wide view, and rarely lets fear of failure stop them trying.",
+      growth: "Bluntness can land harder than intended. A little tact goes a long way without losing the honesty.",
+      matches: "Aries, Leo and Aquarius." },
+    { name: "Capricorn", sym: "♑", dates: "22 Dec – 19 Jan", element: "Earth", planet: "Saturn", traits: "disciplined, ambitious and patient",
+      strength: "Capricorn brings drive and follow-through, and plays the long game better than most.",
+      growth: "Downtime can feel unearned. Rest without guilt is worth practising.",
+      matches: "Taurus, Virgo and Scorpio." },
+    { name: "Aquarius", sym: "♒", dates: "20 Jan – 18 Feb", element: "Air", planet: "Uranus and Saturn", traits: "independent, inventive and a little unconventional",
+      strength: "Aquarius brings original thinking and a strong sense of fairness for the wider group, not just themselves.",
+      growth: "Emotional closeness can feel exposing. Letting people see more than the ideas sometimes deepens a relationship.",
+      matches: "Gemini, Libra and Sagittarius." },
+    { name: "Pisces", sym: "♓", dates: "19 Feb – 20 Mar", element: "Water", planet: "Neptune and Jupiter", traits: "imaginative, compassionate and quietly artistic",
+      strength: "Pisces brings empathy and creativity, and often senses what others are feeling before they say it.",
+      growth: "Escaping into daydreams is easier than facing what’s in front of you. Small, concrete steps help more than big leaps.",
+      matches: "Cancer, Scorpio and Taurus." }
+  ];
+  var ELEMENT_TAKE = {
+    Fire: { Fire: "That lines up with your sign’s own fire, so this probably feels natural rather than a stretch.", Earth: "Fire meeting your pull toward earth is a good mix: earth can give your energy something solid to land on.", Air: "Fire and air feed each other well. Air tends to fan your energy rather than compete with it.", Water: "Fire and water is a classic push and pull: water can cool a fast-moving fire sign, which isn’t a bad thing in small doses." },
+    Earth: { Fire: "Earth meeting a pull toward fire adds some spark to your usual steadiness. It can push you to move faster than you’re used to.", Earth: "That matches your sign’s own earth, so steady and grounded probably feels like home.", Air: "Earth and air is an interesting pairing: air can loosen up an earth sign’s routines a little.", Water: "Earth and water tend to support each other. Water softens earth’s edges, and earth gives water something to hold onto." },
+    Air: { Fire: "Air and fire feed each other well. Fire tends to give your ideas somewhere to go.", Earth: "Air meeting a pull toward earth can ground some of your bigger ideas into something workable.", Air: "That matches your sign’s own air, so thinking and talking things through probably comes easily.", Water: "Air and water don’t always mix simply: water runs on feeling, air runs on thinking, so this pairing can teach you a lot about the other side." },
+    Water: { Fire: "Water and fire is a classic push and pull: fire can bring some heat to your usual depth.", Earth: "Water and earth tend to support each other. Earth gives your feelings somewhere steady to rest.", Air: "Water meeting a pull toward air can help you put words to what you’re feeling, which doesn’t always come naturally to water signs.", Water: "That matches your sign’s own water, so leading with feeling probably comes naturally." }
+  };
+  var TOPIC_TAKE = {
+    Fire: { love: "In relationships, fire signs tend to lead with honesty and go after what they want. The challenge is usually patience once the early spark settles.", career: "At work, fire signs do well when they can take initiative and see quick results. Long waits for recognition can wear on you.", friends: "As a friend, fire signs bring energy and loyalty, and are usually the one pushing the group to actually do the thing.", self: "For self-understanding, the big question for fire signs is often what happens in the quiet moments, not just the exciting ones." },
+    Earth: { love: "In relationships, earth signs show love through steady, practical care more than big declarations. Trust builds slowly and holds firm once it’s there.", career: "At work, earth signs do well with clear structure and visible progress. Chaos and last-minute changes are usually the hardest part.", friends: "As a friend, earth signs are the reliable ones: the person who actually shows up. Let them know that’s noticed.", self: "For self-understanding, earth signs often benefit from asking whether they’re resting because they need to, or because rest feels like the only thing they’re allowed to do once everything’s in order." },
+    Air: { love: "In relationships, air signs connect through conversation and shared ideas. Emotional silence can feel more unsettling than conflict.", career: "At work, air signs do well with variety and people contact. Repetitive, isolated tasks tend to drain you fastest.", friends: "As a friend, air signs are easy to talk to and quick to introduce people to each other. Depth can take longer to build than breadth.", self: "For self-understanding, it can help to ask whether you’re actually feeling something, or just thinking about how it would feel." },
+    Water: { love: "In relationships, water signs feel things deeply and pick up on what’s unsaid. The risk is absorbing more of someone else’s mood than is yours to carry.", career: "At work, water signs often do best in roles with meaning and human contact, though they can take criticism harder than it’s usually meant.", friends: "As a friend, water signs are the ones people go to when something’s actually wrong. Make sure that goes both ways.", self: "For self-understanding, water signs benefit from naming a feeling plainly, rather than letting it stay as a mood in the background." }
+  };
+
   var CRISIS_Q = "You told us you have had thoughts of hurting yourself or that you would be better off dead. You deserve support right now. Please contact a crisis line below or someone you trust today. If you might act on these thoughts, call your local emergency number.";
 
   /* ---------- Small SVG helpers for the IQ test ---------- */
@@ -77,7 +141,10 @@
       long: "One check written in plain language for people aged 11 to 17, and one for parents answering about a child aged 4 to 16." },
     { id: "survey", slug: "surveys", name: "Surveys", accent: "#8a2d5c",
       desc: "Reflect on your experiences. No score, just insights.",
-      long: "These are not scored. You answer a set of questions and get personal reflections back, along with support options that fit what you shared." }
+      long: "These are not scored. You answer a set of questions and get personal reflections back, along with support options that fit what you shared." },
+    { id: "fun", slug: "fun-tests", name: "Just for fun", accent: "#b8860b",
+      desc: "Zodiac signs and other light-hearted personality fun.",
+      long: "Not backed by science, but fun to explore. These are for entertainment, not a look at your mental health." }
   ];
 
 
@@ -1095,6 +1162,40 @@
       next: ["If English is not your first language, remember that this measures English vocabulary, not reasoning ability."],
       related: ["iq-test", "logical-reasoning-test"],
       source: "Questions written for this site for practice and curiosity. This is not a standardised aptitude test."
+    },
+
+    /* ===== Just for fun ===== */
+    {
+      slug: "astrology-test", group: "fun", kind: "survey", minutes: 2,
+      title: "Astrology / Zodiac Sign Test",
+      short: "Find your star sign and see the traits, strengths and best matches that go with it.",
+      tags: "astrology zodiac horoscope star sign compatibility fun",
+      intro: "This is just for fun. Astrology isn’t backed by science, and your result here says nothing about your mental health or personality in any tested sense.",
+      items: [
+        { q: "When’s your birthday?", o: opts([
+          "21 Mar – 19 Apr (Aries)", "20 Apr – 20 May (Taurus)", "21 May – 20 Jun (Gemini)", "21 Jun – 22 Jul (Cancer)",
+          "23 Jul – 22 Aug (Leo)", "23 Aug – 22 Sep (Virgo)", "23 Sep – 22 Oct (Libra)", "23 Oct – 21 Nov (Scorpio)",
+          "22 Nov – 21 Dec (Sagittarius)", "22 Dec – 19 Jan (Capricorn)", "20 Jan – 18 Feb (Aquarius)", "19 Feb – 20 Mar (Pisces)"
+        ]) },
+        { q: "Which element do you feel most drawn to right now?", o: opts(["Fire", "Earth", "Air", "Water"]) },
+        { q: "What are you most curious about right now?", o: opts(["Love and relationships", "Career and purpose", "Friendships and family", "Understanding myself better"]) }
+      ],
+      insights: function (a) {
+        var z = ZODIAC[a[0]];
+        if (!z) return [];
+        var elements = ["Fire", "Earth", "Air", "Water"], drawnTo = elements[a[1]];
+        var topics = ["love", "career", "friends", "self"], topicLabels = ["love and relationships", "career and purpose", "friendships and family", "understanding yourself"], topic = topics[a[2]];
+        return [
+          { tone: 0, title: z.sym + " " + z.name, text: z.name + " (" + z.dates + ") is a " + z.element + " sign, ruled by " + z.planet + ". People often describe " + z.name + " as " + z.traits + "." },
+          { tone: 0, title: "Where " + z.name + " shines", text: z.strength },
+          { tone: 0, title: "Worth watching", text: z.growth },
+          { tone: 0, title: "Signs " + z.name + " often clicks with", text: "Traditionally, " + z.matches },
+          { tone: 0, title: "You picked " + drawnTo, text: ELEMENT_TAKE[z.element][drawnTo] },
+          { tone: 0, title: "On " + topicLabels[a[2]], text: TOPIC_TAKE[z.element][topic] }
+        ];
+      },
+      related: ["personality-test", "introvert-extrovert-test"],
+      source: "Written for this site using traditional Western zodiac associations. Astrology is not a scientific or psychological instrument, and this test is for entertainment only."
     }
 
   ];

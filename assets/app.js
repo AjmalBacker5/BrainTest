@@ -492,7 +492,6 @@
       left += '<section class="panel"><h2>About this score</h2><p>' + esc("Your estimate is based on how many puzzles you solved compared with a typical adult result for a test like this. Scores can change with sleep, stress, language and practice.") + "</p></section>";
     }
 
-    if (!crisis.length && !isIQ && !isProfile) right += helpBox({ id: "res", title: t.youth ? "Someone to talk to" : "Talk to someone" });
     if (t.youth) right += '<section class="panel"><h2>Talking to an adult</h2><p>Not sure how to start? You could say: “I’ve been feeling really low (or worried) lately and I don’t know what to do. Can we talk?” You can show them this page too.</p></section>';
     var aboutLine = isSurvey ? "This survey is for reflection only." :
       isProfile ? "This describes tendencies, not strengths or weaknesses, and it is not a diagnosis." :
