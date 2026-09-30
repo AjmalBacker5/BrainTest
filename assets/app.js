@@ -1,8 +1,8 @@
-/* Unfold: app. Works as a multi-page static site (mode "multi")
+/* MindBearing: app. Works as a multi-page static site (mode "multi")
    or as a single file with hash routes (mode "spa"). */
 (function () {
   "use strict";
-  var CFG = Object.assign({ name: "Unfold", mode: "multi", key: "unfold:", surveyEndpoint: "" }, window.SITE || {});
+  var CFG = Object.assign({ name: "MindBearing", mode: "multi", key: "mindbearing:", surveyEndpoint: "" }, window.SITE || {});
   var TESTS = window.TESTS, GROUPS = window.GROUPS, HELP = window.HELPLINES, SCALES = window.SCALES;
   var BY = {}; TESTS.forEach(function (t) { BY[t.slug] = t; });
   var BYG = {}, GBYID = {}; GROUPS.forEach(function (g) { BYG[g.slug] = g; GBYID[g.id] = g; });
@@ -19,9 +19,9 @@
   };
   function href(route) {
     if (CFG.mode === "spa") return "#/" + (route || "");
-    return (route || "index") + ".html";
+    return "/" + (route ? route + "/" : "");
   }
-  function resultHref(slug) { return CFG.mode === "spa" ? "#/" + slug + "/result" : slug + ".html#result"; }
+  function resultHref(slug) { return CFG.mode === "spa" ? "#/" + slug + "/result" : "/" + slug + "/#result"; }
   function route() {
     if (CFG.mode === "spa") return decodeURIComponent(location.hash.replace(/^#\/?/, ""));
     var r = document.body.getAttribute("data-route") || "";

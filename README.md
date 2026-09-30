@@ -1,4 +1,4 @@
-# Unfold: free mental health tests
+# MindBearing: free mental health tests
 
 A static website with 33 tests in 11 categories: mental health screening, personality, IQ and reasoning, reflective surveys, and a just-for-fun astrology test.
 No backend and no database. Everything runs in the browser, and results are saved in the visitor's own browser (localStorage).
@@ -13,10 +13,12 @@ Upload the contents of this folder to any static host:
 
 ## Pages
 
+URLs are extensionless: each page lives in its own folder as `index.html` (e.g. `depression-test/index.html`, served at `/depression-test/`), so links work with no `.html` and no server rewrite rules needed on any static host. `index.html` and `404.html` stay at the root, since hosts look for those by convention.
+
 - Home: all 11 categories.
-- One page per category, e.g. `mood-tests.html`, `personality-tests.html`, `iq-and-brain-tests.html`.
-- One page per test, e.g. `depression-test.html`, `big-five` is `personality-test.html`, `iq-test.html`.
-- `results.html`, `help.html`, `about.html`, `404.html`.
+- One page per category, e.g. `mood-tests/`, `personality-tests/`, `iq-and-brain-tests/`.
+- One page per test, e.g. `depression-test/`, `big-five` is `personality-test/`, `iq-test/`.
+- `results/`, `help/`, `about/`, and `404.html` at the root.
 
 ### Categories
 
@@ -24,11 +26,10 @@ General wellbeing (4) · Mood (3) · Anxiety and fear (4) · Attention and perce
 
 ## Before you launch
 
-1. **Domain:** find and replace `https://example.com` in all `.html` files, `sitemap.xml` and `robots.txt`.
-2. **Name:** the brand name "Unfold" is a placeholder. Change `name` in `assets/config.js`, then find and replace "Unfold" in the `.html` files (page titles).
-3. **Crisis lines:** check every number in `HELPLINES` near the bottom of `assets/data.js`. Numbers change, and they must be correct.
-4. **Clinical review:** have a qualified mental health professional review the questions, result wording and thresholds.
-5. **Legal:** add a privacy policy and terms suited to your country. If you add analytics or ads, update the privacy text in `assets/app.js` (the "About" page), since it currently says nothing is tracked.
+1. **Domain and name:** done — the site is branded as MindBearing at `https://mindbearing.com` throughout the `.html` files, `sitemap.xml`, `robots.txt` and `assets/config.js`. If this ever changes again, update `name` and `key` in `assets/config.js`, then find and replace the old domain and brand name across the `.html` files.
+2. **Crisis lines:** check every number in `HELPLINES` near the bottom of `assets/data.js`. Numbers change, and they must be correct.
+3. **Clinical review:** have a qualified mental health professional review the questions, result wording and thresholds.
+4. **Legal:** add a privacy policy and terms suited to your country. If you add analytics or ads, update the privacy text in `assets/app.js` (the "About" page), since it currently says nothing is tracked.
 
 ## Sources and licences
 
@@ -56,4 +57,4 @@ Everything is driven by `assets/data.js`.
 - **New category:** add an object to `GROUPS` with `id`, `slug`, `name`, `desc`, `long` and `accent` (any hex colour), then point tests at its `id`. It appears on the home page automatically.
 - **Test types:** `check` (scored with bands), `iq` (right or wrong answers, add `estimate: true` for an IQ score and `limit` in seconds for a timer), `profile` (trait profile, no total), `survey` (no score, `insights` function).
 
-Then create the matching page by copying any test `.html` file and changing its `data-route`, title and description. With Python and Node installed, `python3 build.py` regenerates every page, the sitemap and the single-file preview.
+Then create the matching page by copying any test's `index.html` into a new folder named after the slug, and changing its `data-route`, title and description. Add its URL to `sitemap.xml` too.

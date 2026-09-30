@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Unfold: test content, scoring and helplines.
+   MindBearing: test content, scoring and helplines.
    Add a new check by adding one object to TESTS. See README.md.
    ========================================================================== */
 (function () {
