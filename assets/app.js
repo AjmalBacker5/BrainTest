@@ -129,7 +129,6 @@
 
   function renderHome() {
     var uni = BY["mental-health-check"];
-    var c = detectCountry(), h = helpFor(c), first = h.l[0];
     var cats = GROUPS.map(function (g) {
       var list = testsIn(g);
       return '<li><a class="cat" style="--accent:' + g.accent + '" href="' + href(g.slug) + '">' +
@@ -147,10 +146,6 @@
       '<div class="hero-actions"><a class="btn btn-primary" href="' + href(uni.slug) + '">Start the 3-minute check</a><button class="btn btn-ghost" data-act="to-tests">Browse all ' + TESTS.length + " tests</button></div>" +
       '<ul class="hero-trust"><li>' + tick + "No sign-up</li><li>" + tick + "Free for everyone</li><li>" + tick + "Results in seconds</li></ul>" +
       "</div>" + heroDemo() + "</div></section>" +
-      '<div class="strip"><div class="wrap"><p>Need to talk to someone right now?</p><p>' +
-      (c === "INTL" ? '<a href="' + href("help") + '">Find a crisis line near you</a>' :
-        esc(h.n) + ": " + esc(first[0].split(" (")[0]) + ' <a class="num" href="' + esc(first[2]) + '">' + esc(first[1]) + '</a>. <a href="' + href("help") + '">See more options</a>') +
-      "</p></div></div>" +
       '<section class="section" id="tests"><div class="wrap">' +
       '<div class="section-head"><div><h2>Browse by category</h2><p>' + TESTS.length + " tests in " + GROUPS.length + ' categories. Most take 2 to 4 minutes.</p></div>' +
       '<div class="search"><label class="sr" for="q">Search tests</label>' + ICON.search + '<input id="q" type="search" placeholder="Search, e.g. sleep, anger, focus" autocomplete="off" data-act="search"></div></div>' +
