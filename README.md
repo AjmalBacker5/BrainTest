@@ -29,7 +29,7 @@ General wellbeing (4) · Mood (3) · Anxiety and fear (4) · Attention and perce
 1. **Domain and name:** done — the site is branded as MindBearing at `https://mindbearing.com` throughout the `.html` files, `sitemap.xml`, `robots.txt` and `assets/config.js`. If this ever changes again, update `name` and `key` in `assets/config.js`, then find and replace the old domain and brand name across the `.html` files.
 2. **Crisis lines:** check every number in `HELPLINES` near the bottom of `assets/data.js`. Numbers change, and they must be correct.
 3. **Clinical review:** have a qualified mental health professional review the questions, result wording and thresholds.
-4. **Legal:** add a privacy policy and terms suited to your country. If you add analytics or ads, update the privacy text in `assets/app.js` (the "About" page), since it currently says nothing is tracked.
+4. **Legal:** add a privacy policy and terms suited to your country. Google Tag Manager (`GTM-NCL3FZSQ`) is installed on every page and disclosed on the About page; if you add further analytics, ads, or cookies that need consent under your country's law (e.g. GDPR), add a cookie-consent banner and update the privacy text in `assets/app.js` (the "About" page) to match.
 
 ## Sources and licences
 

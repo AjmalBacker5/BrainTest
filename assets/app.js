@@ -88,7 +88,7 @@
     return '<a class="skip" href="#main">Skip to content</a>' +
       '<header class="top"><div class="wrap">' +
       '<a class="brand" href="' + href("") + '">' + ICON.mark + esc(CFG.name) + "</a>" +
-      '<nav class="nav" aria-label="Main">' + link("", "Tests", "hide-sm") + link("results", "My results") + link("help", "Get help", "help-link") + "</nav>" +
+      '<nav class="nav" aria-label="Main">' + link("", "Tests", "hide-sm") + link("help", "Get help", "help-link") + "</nav>" +
       '<button class="icon-btn" data-act="theme" aria-label="' + (isDark() ? "Switch to light theme" : "Switch to dark theme") + '">' + (isDark() ? ICON.sun : ICON.moon) + "</button>" +
       "</div></header>";
   }
@@ -572,7 +572,7 @@
     page("about",
       '<div class="wrap"><div class="page-head"><h1>About, privacy and sources</h1></div><div class="prose">' +
       "<h2>What " + esc(CFG.name) + " is</h2><p>" + esc(CFG.name) + " offers free, anonymous mental health screening tests for people anywhere in the world. A screening test can show whether your experiences are similar to those of people with a particular condition. It can’t diagnose you. Please share your results with a doctor or mental health professional.</p>" +
-      "<h2>Your privacy</h2><ul><li>No account or sign-up is needed.</li><li>Your answers and results are saved only in your browser’s local storage. They are not sent to any server.</li><li>You can delete everything at any time from the My results page, or by clearing your browser data.</li>" +
+      "<h2>Your privacy</h2><ul><li>No account or sign-up is needed.</li><li>Your answers and results are saved only in your browser’s local storage. They are not sent to any server.</li><li>You can delete everything at any time from the My results page, or by clearing your browser data.</li><li>This site uses Google Tag Manager to understand how visitors use it, such as which pages are viewed. This does not include your test answers or results, which never leave your browser.</li>" +
       (CFG.surveyEndpoint ? "<li>On survey pages, you can choose to share your answers anonymously. Nothing is shared unless you tick the box and press Share.</li>" : "") +
       "</ul><h2>Medical disclaimer</h2><p>This website is for information only and is not a substitute for professional medical advice, diagnosis or treatment. If you are in crisis, contact a crisis line or emergency services immediately.</p>" +
       '<h2>Sources</h2><ul class="sources">' + TESTS.map(function (t) { return "<li><strong>" + esc(t.title) + ":</strong> " + esc(t.source) + "</li>"; }).join("") + "</ul></div></div>");
