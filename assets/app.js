@@ -35,7 +35,7 @@
     search: '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13.5 13.5L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     moon: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 12.5A7 7 0 0 1 7.5 4a7 7 0 1 0 8.5 8.5z" fill="currentColor"/></svg>',
     sun: '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="4" fill="currentColor"/><path d="M10 1v2.5M10 16.5V19M1 10h2.5M16.5 10H19M3.6 3.6l1.8 1.8M14.6 14.6l1.8 1.8M3.6 16.4l1.8-1.8M14.6 5.4l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
-    mark: '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2b38a"/><stop offset="1" stop-color="#1c7a74"/></linearGradient></defs><circle cx="16" cy="16" r="15" fill="url(#bm)"/><path d="M1.5 19c4-2.4 8.5-2.4 14.5 0s10.5 2.4 14.5 0V21a15 15 0 0 1-29 0z" fill="#1d2340" opacity=".85"/><circle cx="16" cy="15" r="4.5" fill="#fff"/></svg>'
+    mark: '<img class="brand-mark" src="/assets/logo-mark.png" alt="" width="30" height="30">'
   };
   var TONE = ["var(--t0)", "var(--t1)", "var(--t2)", "var(--t3)"];
   function count(t) { return t.items.length; }
