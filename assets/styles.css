@@ -373,3 +373,34 @@ button, input, select { font: inherit; color: inherit; }
   .result-hero, .panel, .helpbox { box-shadow: none; border: 1px solid #ccc; }
   .scale-bar span { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* Blog ------------------------------------------------------------------- */
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: .3rem; padding: 0; margin: 0 0 1.25rem; font-weight: 700; color: var(--ink-2); font-size: .95rem; }
+.crumbs li + li::before { content: "›"; margin-right: .3rem; }
+.crumbs a { color: var(--ink-2); }
+.article { max-width: 760px; padding-top: clamp(2rem, 5vw, 3.5rem); padding-bottom: 4rem; }
+.article-head h1 { font-size: clamp(2rem, 4.6vw, 3.2rem); overflow-wrap: anywhere; }
+.article-cat, .post-cat { display: inline-block; font-weight: 700; font-size: .85rem; color: var(--lagoon); margin: 0 0 .6rem; }
+.article-lede { font-size: 1.2rem; color: var(--ink-2); }
+.article-meta { color: var(--ink-2); font-size: .95rem; }
+.article-cover { display: block; width: 100%; height: auto; border-radius: var(--r-lg); margin: 1.5rem 0 2rem; border: 1px solid var(--line); }
+.article-body h2 { font-size: 1.6rem; margin-top: 2.2rem; }
+.article-body h3 { font-size: 1.25rem; margin-top: 1.6rem; }
+.article-body p, .article-body li { font-size: 1.1rem; }
+.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0 .5rem 1.2rem; border-left: 4px solid var(--lagoon); color: var(--ink-2); }
+.article-help { background: var(--danger-soft); border-radius: var(--r-md); padding: .9rem 1.2rem; margin-bottom: 1.5rem; }
+.article-help p { margin: 0; }
+.article-related, .article-sources, .article-more { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.article-related h2, .article-sources h2, .article-more h2 { font-size: 1.4rem; }
+.article-related .related a { background: var(--lagoon-soft); }
+.article-sources ol { padding-left: 1.2rem; }
+.article-sources li { margin-bottom: .4rem; overflow-wrap: anywhere; }
+.post-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 1.25rem; }
+.post-card { display: flex; flex-direction: column; gap: .35rem; height: 100%; padding: 0 0 1.2rem; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--ink); overflow: hidden; }
+.post-card:hover { border-color: var(--lagoon); }
+.post-card img { width: 100%; height: auto; display: block; margin-bottom: .6rem; }
+.post-card > span, .post-card > time { padding: 0 1.2rem; }
+.post-cat { margin: 0; }
+.post-title { font: 700 1.25rem/1.25 var(--display); }
+.post-desc { color: var(--ink-2); font-size: .95rem; }
+.post-card time { color: var(--ink-2); font-size: .88rem; margin-top: auto; }
