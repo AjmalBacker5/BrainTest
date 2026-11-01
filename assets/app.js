@@ -88,14 +88,14 @@
     return '<a class="skip" href="#main">Skip to content</a>' +
       '<header class="top"><div class="wrap">' +
       '<a class="brand" href="' + href("") + '">' + ICON.mark + esc(CFG.name) + "</a>" +
-      '<nav class="nav" aria-label="Main">' + link("", "Tests", "hide-sm") + link("help", "Get help", "help-link") + "</nav>" +
+      '<nav class="nav" aria-label="Main">' + link("", "Tests", "hide-sm") + link("blog", "Articles") + link("help", "Get help", "help-link") + "</nav>" +
       '<button class="icon-btn" data-act="theme" aria-label="' + (isDark() ? "Switch to light theme" : "Switch to dark theme") + '">' + (isDark() ? ICON.sun : ICON.moon) + "</button>" +
       "</div></header>";
   }
   function footer() {
     return '<footer class="foot"><div class="wrap"><div><p><strong>' + esc(CFG.name) + "</strong> offers free mental health self-checks. They are not a diagnosis and do not replace advice from a qualified professional.</p>" +
       '<p class="small">Your answers are stored only in this browser. © ' + new Date().getFullYear() + " " + esc(CFG.name) + ".</p></div>" +
-      '<nav aria-label="Footer"><a href="' + href("") + '">All tests</a><a href="' + href("results") + '">My results</a><a href="' + href("help") + '">Get help</a><a href="' + href("about") + '">About, privacy and sources</a></nav></div></footer>';
+      '<nav aria-label="Footer"><a href="' + href("") + '">All tests</a><a href="' + href("blog") + '">Articles</a><a href="' + href("results") + '">My results</a><a href="' + href("help") + '">Get help</a><a href="' + href("about") + '">About, privacy and sources</a></nav></div></footer>';
   }
   function page(active, inner) {
     stopTimers();
@@ -579,6 +579,8 @@
 
   /* ---------- router ---------- */
   function render() {
+    // Pre-rendered pages (the blog) keep their own HTML; only the shared click handlers apply.
+    if (document.body.hasAttribute("data-static")) return;
     run = null; stopTimers();
     var r = route(), parts = r.split("/");
     if (!r || r === "index") renderHome();

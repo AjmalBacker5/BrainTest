@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7efec"/><stop offset=".55" stop-color="#e8ecf5"/><stop offset="1" stop-color="#fbe3d3"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/>
+<circle cx="1060" cy="110" r="190" fill="#1c7a74" opacity=".10"/><circle cx="140" cy="560" r="150" fill="#7a4bbd" opacity=".08"/>
+<text x="80" y="110" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#1c7a74">MindBearing · Research news</text>
+<text x="80" y="254" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#1d2340">Loneliness and isolation</text>
+<text x="80" y="330" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#1d2340">linked to fewer years free of</text>
+<text x="80" y="406" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#1d2340">depression and anxiety</text>
+<text x="80" y="560" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#4b5277">1 November 2026</text>
+</svg>
